@@ -1,0 +1,30 @@
+from setuptools import setup
+import universe_bot
+
+setup(
+    name=universe_bot.__name__,
+    version=universe_bot.__version__,
+    packages=[
+        'universe_bot',
+        'universe_bot.core',
+        'universe_bot_telegram',
+    ],
+    url=universe_bot.__url__,
+    license=universe_bot.__license__,
+    author=universe_bot.__author__,
+    author_email=universe_bot.__email__,
+    description=universe_bot.__description__,
+    long_description=universe_bot.__long_description__,
+    long_description_content_type="text/markdown",
+    keywords=universe_bot.__keywords__,
+    install_requires=universe_bot.__requirements__,
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'universe-bot=universe_bot.__main__:main'
+        ],
+        'universe_bot.backend': [
+            'telegram=universe_bot_telegram',
+        ]
+    }
+)
