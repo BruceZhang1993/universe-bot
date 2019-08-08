@@ -1,14 +1,10 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 import universe_bot
 
 setup(
     name=universe_bot.__name__,
     version=universe_bot.__version__,
-    packages=[
-        'universe_bot',
-        'universe_bot.core',
-        'universe_bot_telegram',
-    ],
+    packages=find_packages(),
     url=universe_bot.__url__,
     license=universe_bot.__license__,
     author=universe_bot.__author__,

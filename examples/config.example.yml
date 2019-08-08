@@ -1,0 +1,25 @@
+plugins:
+  - echo
+connections:
+  telegram1:
+    backend: telegram
+    token: YOUR_API_TOKEN_HERE
+  telegram2:
+    backend: telegram
+    token: YOUR_API_TOKEN_HERE
+  irc1:
+    backend: irc
+    username: USERNAME
+    realname: REALNAME
+    nickname: NICKNAME
+    server: chat.freenode.net
+    port: 7000
+    ssl: true
+    password: null
+    auth: sasl # null, nickserv
+    nickserv:
+      password: PASSWORD
+    sasl:
+      mechanism: PLAIN
+      username: USERNAME
+      password: PASSWORD
