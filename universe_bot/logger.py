@@ -1,12 +1,14 @@
 import os
 import logging
 import logging.config
-from universe_bot.consts import LOGGER_CONFIG, LOG_FILE
+from universe_bot.consts import LOGGER_CONFIG, LOG_FILE, PLUGIN_DIRS
 
 
 def ensure_dirs():
     if not os.path.exists(os.path.dirname(LOG_FILE)):
         os.makedirs(os.path.dirname(LOG_FILE))
+    if not os.path.exists(PLUGIN_DIRS[1]):
+        os.makedirs(PLUGIN_DIRS[1])
 
 def initialize_logger(debug=False):
     """ Initialize logger"""

@@ -2,7 +2,7 @@ import argparse
 import sys
 from universe_bot import initialize, __appname__, __version__, __description__
 from universe_bot.logger import logger
-from universe_bot.core import bootstrap
+from universe_bot.plugin import register_all_plugins
 from universe_bot.backend import available_backends
 
 
@@ -27,7 +27,8 @@ def application(args):
         print(__appname__ + ' ' + __version__)
         print(__description__)
         sys.exit(0)
-    print(available_backends)
+    register_all_plugins()
+    # print(available_backends)
     # raise NotImplementedError('not implemented')
 
 if __name__ == "__main__":

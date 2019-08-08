@@ -1,10 +1,16 @@
+import os
 import pathlib
 from time import strftime
-from appdirs import user_config_dir, user_log_dir
+from appdirs import user_config_dir, user_log_dir, user_data_dir
 
 APPNAME = 'UniverseBot'
 
 LOG_FILE = pathlib.Path(user_log_dir(APPNAME)) / (strftime('%Y-%m-%d') + '.log')
+
+PLUGIN_DIRS = [
+    pathlib.Path(os.path.abspath(os.path.dirname(__file__))) / 'plugins',
+    pathlib.Path(pathlib.Path(user_data_dir(APPNAME))) / 'plugins',
+]
 
 LOGGER_CONFIG = {
     'version': 1,
