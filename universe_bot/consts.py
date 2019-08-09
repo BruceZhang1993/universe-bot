@@ -7,6 +7,8 @@ APPNAME = 'UniverseBot'
 
 LOG_FILE = pathlib.Path(user_log_dir(APPNAME)) / (strftime('%Y-%m-%d') + '.log')
 
+CONF_FILE = pathlib.Path(user_config_dir(APPNAME)) / 'config.yml'
+
 PLUGIN_DIRS = [
     pathlib.Path(os.path.abspath(os.path.dirname(__file__))) / 'plugins',
     pathlib.Path(pathlib.Path(user_data_dir(APPNAME))) / 'plugins',

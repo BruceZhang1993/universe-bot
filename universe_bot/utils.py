@@ -33,7 +33,7 @@ def set_config(config: dict, key: str, val):
         else:
             return config
     real_path = ''.join(map(lambda s: "[" + s + "]" if isinstance(s, int) else "['" + s + "']", real_path))
-    exec("config" + real_path + " = " + str(val))
+    exec("config" + real_path + " = val")
     return config
 
 def singleton(cls):

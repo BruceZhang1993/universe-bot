@@ -1,7 +1,7 @@
 import os
 import logging
 import logging.config
-from universe_bot.consts import LOGGER_CONFIG, LOG_FILE, PLUGIN_DIRS
+from universe_bot.consts import LOGGER_CONFIG, LOG_FILE, PLUGIN_DIRS, CONF_FILE
 
 
 def ensure_dirs():
@@ -9,6 +9,8 @@ def ensure_dirs():
         os.makedirs(os.path.dirname(LOG_FILE))
     if not os.path.exists(PLUGIN_DIRS[1]):
         os.makedirs(PLUGIN_DIRS[1])
+    if not os.path.exists(os.path.dirname(CONF_FILE)):
+        os.makedirs(os.path.dirname(CONF_FILE))
 
 def initialize_logger(debug=False):
     """ Initialize logger"""
