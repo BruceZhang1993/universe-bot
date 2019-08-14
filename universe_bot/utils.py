@@ -39,8 +39,8 @@ def set_config(config: dict, key: str, val):
 def singleton(cls):
     _instance = {}
 
-    def inner():
+    def inner(*args, **kwargs):
         if cls not in _instance:
-            _instance[cls] = cls()
+            _instance[cls] = cls(*args, **kwargs)
         return _instance[cls]
     return inner
