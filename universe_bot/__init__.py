@@ -9,6 +9,9 @@ __license__ = 'GPL3'
 __email__ = 'zttt183525594@gmail.com'
 __description__ = 'One bot for universe.'
 __keywords__ = ['bot', 'telegram', 'irc']
+__extra_requires__ = {
+    'telegram': ['python-telegram-bot'],
+}
 
 with open("./README.md", "r") as fh:
     __long_description__ = fh.read()

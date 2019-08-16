@@ -15,7 +15,9 @@ def find_all_plugins():
 
 
 def register_all_plugins():
-    for plugin in find_all_plugins():   
+    for plugin in find_all_plugins():
+        if plugin['name'] in LOADED_PLUGINS.keys():
+            continue
         spec = importlib.util.spec_from_file_location("unibot.plugin." + plugin['name'], plugin['path'])
         foo = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(foo)

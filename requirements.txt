@@ -1,2 +1,2 @@
 appdirs
-yaml
+PyYaml

@@ -14,6 +14,7 @@ setup(
     long_description_content_type="text/markdown",
     keywords=universe_bot.__keywords__,
     install_requires=universe_bot.__requirements__,
+    extra_requires=universe_bot.__extra_requires__,
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
