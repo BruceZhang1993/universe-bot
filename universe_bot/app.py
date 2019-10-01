@@ -24,7 +24,7 @@ def application(args):
     logger().info('successfully loaded configuration')
     with ThreadPoolExecutor(max_workers=os.cpu_count()) as pool:
         connections = Config().get('connections')
-        task = [pool.submit(connection, backend=connections[c]['backend'], name=c) for c in connections]
+        task = [pool.submit(connection, name=c, c=connections[c]) for c in connections]
         for future in as_completed(task):
-            print(future.result())
+            future.result()
     raise NotImplementedError('not implemented')
