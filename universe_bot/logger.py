@@ -18,15 +18,15 @@ def ensure_dirs():
 def initialize_logger(debug=False):
     """ Initialize logger"""
     if debug:
-        LOGGER_CONFIG['loggers'][''] = LOGGER_CONFIG['loggers']['debug']
+        LOGGER_CONFIG['loggers']['root'] = LOGGER_CONFIG['loggers']['debug']
         LOGGER_CONFIG['loggers']['plugin'] = LOGGER_CONFIG['loggers']['plugin-d']
         LOGGER_CONFIG['loggers']['backend'] = LOGGER_CONFIG['loggers']['backend-d']
     else:
-        LOGGER_CONFIG['loggers'][''] = LOGGER_CONFIG['loggers']['uni']
+        LOGGER_CONFIG['loggers']['root'] = LOGGER_CONFIG['loggers']['uni']
         LOGGER_CONFIG['loggers']['plugin'] = LOGGER_CONFIG['loggers']['plugin-c']
         LOGGER_CONFIG['loggers']['backend'] = LOGGER_CONFIG['loggers']['backend-c']
     logging.config.dictConfig(LOGGER_CONFIG)
 
 
-def logger(_logger=''):
+def logger(_logger='root'):
     return logging.getLogger(_logger)
