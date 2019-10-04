@@ -1,1 +1,5 @@
-from universe_bot.plugin import LOADED_PLUGINS
+from universe_bot.logger import logger
+
+
+def log():
+    return logger('plugin')

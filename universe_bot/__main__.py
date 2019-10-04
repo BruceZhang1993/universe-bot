@@ -24,5 +24,6 @@ def main():
         elif e.code != 0:
             logger().warning(str(e.__class__.__name__) + ': ' + str(e))
 
+
 if __name__ == "__main__":
-        main()
+    main()

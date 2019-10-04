@@ -23,7 +23,19 @@ LOGGER_CONFIG = {
         },
         'console': {
             'format': "[%(levelname)s] %(message)s",
-        }
+        },
+        'default-backend': {
+            'format': "[BACKEND] [%(levelname)s] %(message)s (%(filename)s::%(funcName)s::%(lineno)d) -- %(asctime)s",
+        },
+        'console-backend': {
+            'format': "[BACKEND] [%(levelname)s] %(message)s",
+        },
+        'default-plugin': {
+            'format': "[PLUGIN] [%(levelname)s] %(message)s (%(filename)s::%(funcName)s::%(lineno)d) -- %(asctime)s",
+        },
+        'console-plugin': {
+            'format': "[PLUGIN] [%(levelname)s] %(message)s",
+        },
     },
     'handlers': {
         'console': {
@@ -31,9 +43,29 @@ LOGGER_CONFIG = {
             'formatter': 'console',
             'class': 'logging.StreamHandler'
         },
+        'console_backend': {
+            'level': 'INFO',
+            'formatter': 'console-backend',
+            'class': 'logging.StreamHandler'
+        },
+        'console_plugin': {
+            'level': 'INFO',
+            'formatter': 'console-plugin',
+            'class': 'logging.StreamHandler'
+        },
         'console_debug': {
             'level': 'DEBUG',
             'formatter': 'default',
+            'class': 'logging.StreamHandler'
+        },
+        'console_debug_backend': {
+            'level': 'DEBUG',
+            'formatter': 'default-backend',
+            'class': 'logging.StreamHandler'
+        },
+        'console_debug_plugin': {
+            'level': 'DEBUG',
+            'formatter': 'default-plugin',
             'class': 'logging.StreamHandler'
         },
         'file': {
@@ -43,9 +75,37 @@ LOGGER_CONFIG = {
             'filename': LOG_FILE,
             'mode': 'a'
         },
+        'file-backend': {
+            'level': 'INFO',
+            'formatter': 'default-backend',
+            'class': 'logging.FileHandler',
+            'filename': LOG_FILE,
+            'mode': 'a'
+        },
+        'file-plugin': {
+            'level': 'INFO',
+            'formatter': 'default-plugin',
+            'class': 'logging.FileHandler',
+            'filename': LOG_FILE,
+            'mode': 'a'
+        },
         'file_debug': {
             'level': 'DEBUG',
             'formatter': 'default',
+            'class': 'logging.FileHandler',
+            'filename': LOG_FILE,
+            'mode': 'a'
+        },
+        'file_debug_backend': {
+            'level': 'DEBUG',
+            'formatter': 'default-backend',
+            'class': 'logging.FileHandler',
+            'filename': LOG_FILE,
+            'mode': 'a'
+        },
+        'file_debug_plugin': {
+            'level': 'DEBUG',
+            'formatter': 'default-plugin',
             'class': 'logging.FileHandler',
             'filename': LOG_FILE,
             'mode': 'a'
@@ -63,6 +123,30 @@ LOGGER_CONFIG = {
         'debug': {
             'handlers': ['file_debug', 'console_debug'],
             'level': 'DEBUG',
-        }
+        },
+        'plugin-c': {
+            'handlers': ['file_debug_plugin', 'console_plugin'],
+            'level': 'DEBUG',
+        },
+        'plugin-f': {
+            'handlers': ['file_debug_plugin'],
+            'level': 'DEBUG',
+        },
+        'plugin-d': {
+            'handlers': ['file_debug_plugin', 'console_debug_plugin'],
+            'level': 'DEBUG',
+        },
+        'backend-c': {
+            'handlers': ['file_debug_backend', 'console_backend'],
+            'level': 'DEBUG',
+        },
+        'backend-f': {
+            'handlers': ['file_debug_backend'],
+            'level': 'DEBUG',
+        },
+        'backend-d': {
+            'handlers': ['file_debug_backend', 'console_debug_backend'],
+            'level': 'DEBUG',
+        },
     },
 }
