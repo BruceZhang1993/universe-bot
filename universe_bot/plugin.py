@@ -8,9 +8,13 @@ LOADED_PLUGINS = {}
 
 def find_all_plugins():
     plugins = []
-    for dir in PLUGIN_DIRS:
-        plugins.extend(list(map(lambda path: {'name':path.name.rstrip('.py'),'path':path}, map(lambda f: pathlib.Path(dir) / f,
-                filter(lambda f: f.endswith('.py') and f != '__init__.py', os.listdir(dir))))))
+    for dir_ in PLUGIN_DIRS:
+        plugins.extend(
+            list(map(lambda path: {'name': path.name.rstrip('.py'), 'path': path},
+                     map(lambda f: pathlib.Path(dir_) / f,
+                         filter(lambda f: f.endswith(
+                             '.py') and f != '__init__.py',
+                                os.listdir(dir_))))))
     return plugins
 
 

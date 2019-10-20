@@ -25,3 +25,5 @@ F
 universe_bot/logger.py,e/5/e5f10940b7489e70c82412553b0194aebfd9cc75
 M
 universe_bot_telegram/main.py,e/b/eba9cab194b7b3a547707888ced83b1293f67b33
+G
+universe_bot/backend.py,7/f/7f50059f9347de6d06efd414f96c29edf7964f5f
