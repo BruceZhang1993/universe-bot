@@ -1,2 +1,7 @@
 /.pytest_cache
 __pycache__
+/examples/test.config.yml
+/build
+/dist
+/universe_bot.egg-info
+/.idea
