@@ -1,4 +1,4 @@
-from universe_bot.core.plugin import log
+from universe_bot.core.plugin import log, command
 
 __name__ = 'echo'
 __alias__ = 'Echo Plugin'
@@ -8,9 +8,6 @@ __author__ = 'Bruce Zhang'
 __license__ = 'MIT'
 
 
-def register():
-    log().info('plugin register')
-
-
-def unregister():
-    log().info('plugin unregister')
+@command('echo')
+def reply_same_text(source, target, arguments):
+    pass
